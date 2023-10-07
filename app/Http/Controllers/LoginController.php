@@ -65,7 +65,7 @@ class LoginController extends Controller
             }
             //catch exceptions
         } catch (Exception $e) {
-            dd($e->getMessage());
+            // dd($e->getMessage());
         }
     }
 }
