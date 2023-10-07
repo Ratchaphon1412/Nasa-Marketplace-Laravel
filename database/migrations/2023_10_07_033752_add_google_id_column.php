@@ -12,6 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         //
+        schema::table('users', function (Blueprint $table) {
+            $table->string('google_id')->nullable()->after('password');
+        });
     }
 
     /**
