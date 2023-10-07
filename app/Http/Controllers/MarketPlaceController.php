@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 
 use App\Models\Project;
-
+use App\Models\Post;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -178,6 +178,17 @@ class MarketPlaceController extends Controller
             'project_id' => $project->id,
             'user_id' => Auth::user()->id,
         ]);
+        $project = Project::find($project->id);
+
+        return redirect()->route('marketplace.details', $project);
+    }
+
+    public function deletePost(Project $project, Post $post)
+    {
+
+        $post = $project->posts()->find($post->id);
+        $post->delete();
+        $project = Project::find($project->id);
 
         return redirect()->route('marketplace.details', $project);
     }

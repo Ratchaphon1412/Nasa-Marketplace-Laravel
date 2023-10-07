@@ -45,6 +45,7 @@ Route::controller(MarketPlaceController::class)->group(function () {
         Route::get('/marketplace/interest/{project}', 'interest')->name('marketplace.interest');
         Route::get('/me/interest', 'meInterest')->name('me.interest');
         Route::post('/me/post/{project}', 'post')->name('post');
+        Route::post('/me/post/delete/{project}/{post}', 'deletePost')->name('post.delete');
     });
 });
 

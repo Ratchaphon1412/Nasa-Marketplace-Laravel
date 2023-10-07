@@ -70,9 +70,11 @@
                 <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Interest</button>
             </li>
             @endif
+            @if(($project->usersInterested()->where('user_id',auth()->user()->id)->count()>0) || ($project->owner->id == auth()->user()->id))
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="posts-tab" data-tabs-target="#posts" type="button" role="tab" aria-controls="posts" aria-selected="false">Posts</button>
             </li>
+            @endif
         @endauth
 
     </ul>
@@ -98,9 +100,11 @@
             @include('marketplace.approve-team')
             </div>
         @endif
+        @if(($project->usersInterested()->where('user_id',auth()->user()->id)->count()>0) || ($project->owner->id == auth()->user()->id))
         <div class="hidden p-4 rounded-lg " id="posts" role="tabpanel" aria-labelledby="posts-tab">
             @include('marketplace.post')
         </div>
+        @endif
 
     @endauth
 </div>

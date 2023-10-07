@@ -63,8 +63,12 @@
                             aria-labelledby="dropdownMenuIconHorizontalButton">
                 
                             <li>
-                                <a href="#"
-                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                <form action="{{route('post.delete',['project'=>$project,'post'=>$post])}}" method="POST" >
+                                    @csrf
+                                    <button type="submit"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
+                                </form>
+                     
                             </li>
             
                         </ul>
