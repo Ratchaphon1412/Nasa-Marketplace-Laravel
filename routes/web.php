@@ -32,7 +32,14 @@ Route::middleware([
 Route::controller(MarketPlaceController::class)->group(function () {
     Route::get('/marketplace', 'index')->name('marketplace');
     Route::get('/marketplace/detail', 'details')->name('marketplace.details');
-    Route::get('/marketplace/create', 'create')->name('marketplace.create');
+    Route::middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified',
+    ])->group(function () {
+        Route::get('/marketplace/create', 'create')->name('marketplace.create');
+        Route::post('/marketplace/store', 'store')->name('marketplace.store');
+    });
 });
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
