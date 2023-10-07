@@ -37,4 +37,10 @@ class Project extends Model
     {
         return $this->belongsToMany(User::class, 'project_user_interested', 'project_id', 'user_id');
     }
+
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
 }

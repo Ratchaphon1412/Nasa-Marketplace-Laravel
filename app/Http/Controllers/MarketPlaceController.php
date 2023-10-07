@@ -162,4 +162,23 @@ class MarketPlaceController extends Controller
 
         return view('interest-user', compact('projects'));
     }
+
+
+    public function post(Request $request, Project $project)
+    {
+
+        $request->validate([
+            'title' => 'required',
+            'postcontent' => 'required',
+        ]);
+
+        $post = $project->posts()->create([
+            'title' => $request->title,
+            'content' => $request->postcontent,
+            'project_id' => $project->id,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        return redirect()->route('marketplace.details', $project);
+    }
 }

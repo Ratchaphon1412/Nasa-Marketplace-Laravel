@@ -5,11 +5,11 @@ style="background-image:url('http://localhost/assets/images/space-background-fin
 >
 	<div class="container mx-auto bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-lg mt-16 p-14">
 		<form>
-			<h1 class="text-center font-bold text-white text-4xl">Find the perfect domain name</label>
+			<h1 class="text-center font-bold text-white text-4xl">Find the Open Source Project</label>
 				<p class="mx-auto font-normal text-sm my-6 max-w-lg">Enter your select domain name and choose any
 					extension name in the next step (choose between .com, .online, .tech, .site, .net, and more)</p>
 				<div class="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
-					<input class="text-base text-gray-400 flex-grow outline-none px-2 rounded" name="search" type="text" placeholder="Search your domain name" value="{{ request('search') }}" />
+					<input class="text-base text-gray-400 flex-grow outline-none px-2 rounded" name="search" type="text" placeholder="Search Open Source" value="{{ request('search') }}" />
 					<div class="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto ">
 	
 						<button class="bg-indigo-500 text-white text-base rounded-lg px-4 py-2 font-thin">Search</button>
@@ -22,7 +22,7 @@ style="background-image:url('http://localhost/assets/images/space-background-fin
 			@if(count($projectSearch) > 0)
 			<div class=" flex flex-col  p-14   rounde-lg  bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm ">
 
-				<div class="lg:text-2xl md:text-xl text-lg lg:p-3 p-1 font-black text-gray-700">Selecciona el negocio</div>
+				<div class="lg:text-2xl md:text-xl text-lg lg:p-3 p-1 font-black text-gray-700">Search {{ app('request')->input('search') }}</div>
 				@foreach ( $projectSearch as $searchproject )
 					
 				
