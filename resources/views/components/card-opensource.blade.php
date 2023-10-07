@@ -3,14 +3,14 @@
     <div class="container">
     <div class="max-w-sm w-full bg-gray-900 shadow-lg rounded-xl p-8">
         <div class="flex flex-col ">
-        <a href="/marketplace/detail">
+        <a href="{{route('marketplace.details',['project'=>$project])}}">
             <div class="relative h-62 w-full mb-3">
             <div class="absolute flex flex-col top-0 right-0 p-3">
                 <button class="transition ease-in duration-300 bg-gray-800  hover:text-purple-500 shadow hover:shadow-md text-gray-500 rounded-full w-8 h-8 text-center p-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg></button>
             </div>
-            <img src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80" alt="Just a flower" class=" w-full   object-fill  rounded-2xl transition-transform transform hover:scale-110">
+                <img src="{{url('storage/'.$project->image_poster)}}" class=" w-full   object-fill  rounded-2xl transition-transform transform hover:scale-110">
             </div>
             <div class="flex-auto justify-evenly">
             <div class="flex flex-wrap ">
@@ -21,16 +21,15 @@
                 <span class="text-gray-400 whitespace-nowrap mr-3">4.60</span><span class="mr-2 text-gray-400">India</span>
                 </div>
                 <div class="flex items-center w-full justify-between min-w-0 ">
-                <h2 class="text-lg mr-auto cursor-pointer text-gray-200 hover:text-purple-500 truncate ">Lorem ipsum
-                    is placeholder text commonly used in the graphic</h2>
-                <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
-                    INSTOCK</div>
-                </div>
+                <h2 class="text-lg font-bold  line-clamp-2 mr-auto cursor-pointer text-gray-200 hover:text-purple-500  ">{{$project->name}} </h2>
+               
             </div>
-            <div class="text-xl text-white font-semibold mt-1">$240.00</div>
+            <div class=" text-white font-thin mt-1  line-clamp-2 ">{{$project->description}}</div>
             <div class="lg:flex  py-4  text-sm text-gray-600">
                 <div class="flex-1 inline-flex items-center  mb-3">
-             
+                    <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                        {{$project->subCategory->category->name}}</div>
+                    </div>
                 </div>
          
             </div>

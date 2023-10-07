@@ -17,8 +17,9 @@ class MarketPlaceController extends Controller
     {
 
         $categories = Category::all();
+        $projects = Project::all();
 
-        return view('marketplace.index', compact('categories'));
+        return view('marketplace.index', compact('categories', 'projects'));
     }
 
     public function details(Project $project)
@@ -60,6 +61,63 @@ class MarketPlaceController extends Controller
 
             ]
         );
+        return redirect()->route('dashboard');
+    }
+
+    public function update(Request $request, Project $project)
+    {
+
+        $project = Project::find($project->id);
+
+        $name = $project->name;
+        $description = $project->description;
+        $sub_category_id = $project->sub_category_id;
+        $owner_id = $project->owner_id;
+        $image_poster = $project->image_poster;
+        $content = $project->content;
+
+        if ($request->name != null) {
+            $name = $request->name;
+        }
+        if ($request->description != null) {
+            $description = $request->description;
+        }
+        if ($request->sub_category_id != null) {
+            $sub_category_id = $request->sub_category_id;
+        }
+        if ($request->owner_id != null) {
+            $owner_id = $request->owner_id;
+        }
+        if ($request->image_poster != null) {
+
+            $imageName = $request->file('image_poster')->getClientOriginalName();
+            $image_poster = $request->file('image_poster')->storeAs('project/posters', $imageName, 'public');
+        }
+        if ($request->content != null) {
+            $content = $request->content;
+        }
+
+
+
+
+        $project->update(
+            [
+                'name' => $name,
+                'description' => $description,
+                'sub_category_id' => $sub_category_id,
+                'owner_id' => $owner_id,
+                'image_poster' => $image_poster,
+                'content' => $content,
+
+            ]
+        );
+
+        return redirect()->route('dashboard');
+    }
+
+    public function delete(Project $project)
+    {
+        $project->delete();
         return redirect()->route('dashboard');
     }
 

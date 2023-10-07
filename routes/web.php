@@ -31,7 +31,7 @@ Route::middleware([
 
 Route::controller(MarketPlaceController::class)->group(function () {
     Route::get('/marketplace', 'index')->name('marketplace');
-    Route::get('/marketplace/detail', 'details')->name('marketplace.details');
+    Route::get('/marketplace/detail/{project}', 'details')->name('marketplace.details');
     Route::middleware([
         'auth:sanctum',
         config('jetstream.auth_session'),
@@ -40,6 +40,8 @@ Route::controller(MarketPlaceController::class)->group(function () {
         Route::get('/marketplace/create', 'create')->name('marketplace.create');
         Route::post('/marketplace/store', 'store')->name('marketplace.store');
         Route::get('/dashboard', 'projectOwner')->name('dashboard');
+        Route::post('/marketplace/store/{project}', 'update')->name('marketplace.update');
+        Route::post('/marketplace/delete/{project}', 'delete')->name('marketplace.delete');
     });
 });
 

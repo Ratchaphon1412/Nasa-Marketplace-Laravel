@@ -1,25 +1,27 @@
 <x-guest-layout>
-    <section id="coverImage" class="justify-center items-center overflow-x-hidden bg-fixed w-full    bg-cover bg-no-repeat " style="background-image:url('https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80')" >
-        <div class="flex flex-col justify-center items-center  bg-black rounded-lg relative p-12   w-auto overflow-hidden backdrop-filter backdrop-blur-sm bg-opacity-10  bg-[url('https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80')] ">
+
+    
+    <section id="coverImage" class="justify-center items-center overflow-x-hidden bg-fixed w-full pt-24    bg-cover bg-no-repeat " style="background-image:url('{{url('storage/'.$project->image_poster)}}')" >
+        <div class="flex flex-col justify-center items-center  bg-black rounded-lg relative p-12   w-auto overflow-hidden backdrop-filter backdrop-blur-sm bg-opacity-10  bg-[url({{url('storage/'.$project->image_poster)}})] ">
             <div class="grid grid-cols-1 md:grid-cols-2 backdrop-filter backdrop-blur-sm bg-opacity-80 -m-8   bg-black text-white  rounded-lg shadow-lg overflow-hidden  w-3/4  drop-shadow-lg">
-                <img src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80"  alt="Mountain"
+                <img src="{{url('/storage/'.$project->image_poster)}}"  alt="Mountain"
                 class="w-full h-full object-cover">
                 <div id="text Title" class="flex justify-center items-center ">
                     <div id="text" class="p-6 flex-col  justify-center items-center space-y-4  gap-4">
                         <div>
-                            <p class="text-base">Opensoruce Project</p>
-                            <h2 class="text-3xl  font-black">Lorem ipsum dolor sit amet, consectetur </h2>
+                            <p class="text-base">{{$project->subCategory->name}}</p>
+                            <h2 class="text-3xl  font-black">{{$project->name}}</h2>
                         </div>
                         <div class="flex flex-row ">
                             <i class="bi bi-calendar-week font-bold mr-2"></i>
-                            <p class=" leading-tight  text-base ">
-                               2023 Oct 05 - 2023 Dec 05
+                            <p class=" leading-tight  text-base line-clamp-3">
+                                {{$project->description}}
                             </p>
                         </div>
                         <div class="flex flex-row mb-4">
                             <i class="bi bi-geo-alt-fill mr-2"></i>
                             <p class="w-3/4">
-                                Bangkok | Thailand
+                                {{$project->subCategory->category->name}}
 
                             </p>
                         </div>
@@ -28,7 +30,7 @@
                             Join
 
                         </button>
-                    
+                        
 
                     </div>
                 </div>
@@ -57,7 +59,11 @@
 </div>
 <div id="myTabContent">
     <div class="hidden p-4 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        
+        <div class="flex flex-col   items-center mx-auto w-full">
+           <div class="flex  flex-col space-y-8">
+            {!! \Illuminate\Support\Str::markdown($project->content) !!}
+           </div>
+        </div>
     </div>
     <div class="hidden p-4 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
         @include('marketplace.update-project')

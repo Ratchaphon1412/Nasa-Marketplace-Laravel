@@ -26,7 +26,7 @@
                   </div>
             </div>
         @foreach ($projects as $project )
-            <x-card-opensource />
+            <x-card-opensource :project="$project"/>
       
         @endforeach
         </div>
