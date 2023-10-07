@@ -30,7 +30,7 @@ class LoginController extends Controller
      */
     public function handleGoogleCallback()
     {
-        // try {
+        try {
         //create a user using socialite driver google
         $user = Socialite::driver('google')->user();
         // if the user exits, use that user and login
@@ -63,9 +63,9 @@ class LoginController extends Controller
             // go to the dashboard
             return redirect('/dashboard');
         }
-        //catch exceptions
-        // } catch (Exception $e) {
-        //     dd($e->getMessage());
-        // }
+        catch exceptions
+        } catch (Exception $e) {
+            dd($e);
+        }
     }
 }
