@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @vite(['resources/js/three3D.js'])
+    
    <div class="flex flex-row w-full bg-black">
         <canvas id="webgl" class="w-full bg-gray-900" ></canvas>
     <div class="w-full">
