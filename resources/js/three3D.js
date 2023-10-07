@@ -1,15 +1,13 @@
 import * as THREE from 'three';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
-import moonTexture from '../assets/moon-texture.jpg';
-import moonDisplacementMap from "../assets/moon-displacement.jpg";
 
 const scene = new THREE.Scene();
 
 const geometry = new THREE.SphereGeometry( 3, 64, 64 );
 
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load(moonTexture);
-const displacementMap = textureLoader.load(moonDisplacementMap);
+const texture = textureLoader.load("https://s3-us-west-2.amazonaws.com/s.cdpn.io/17271/ldem_3_8bit.jpg");
+const displacementMap = textureLoader.load("https://s3-us-west-2.amazonaws.com/s.cdpn.io/17271/lroc_color_poles_1k.jpg");
 
 const material = new THREE.MeshStandardMaterial( {
     color: 0xffffff,
