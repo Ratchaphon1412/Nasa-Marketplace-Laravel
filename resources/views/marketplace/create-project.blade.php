@@ -78,8 +78,18 @@
                     <input id="dropzone-file" name="image_poster" type="file" class="hidden"  required/>
                 </label>
             </div> 
+            <div class="w-full flex flex-col justify-center items-center mb-3" >
+                <div class="flex flex-col justify-start items-start w-full">
+                     <h3 class="text-xl font-bold text-gray-900 mt-4"  id="preview_section" style="display:none;">Image Poster Preview</h3>
+                </div>
+                
+                     <img id="preview" src="" alt="your image" class="mt-3 mb-3 w-1/2 h-1/2 " style="display:none;"/>
+                 
+             </div>
             
          </div> 
+
+    
         
 
         
@@ -108,3 +118,27 @@
 
 
 </x-guest-layout>
+
+<script>
+        
+    let poster = document.getElementById("dropzone-file");
+
+    poster.addEventListener("change", function(e){
+        preview = document.getElementById('preview');
+        preview.style.display = 'block';
+
+        preview_section = document.getElementById('preview_section');
+        preview_section.style.display = 'block';
+
+        const [file] = poster.files
+        if (file) {
+            preview.src = URL.createObjectURL(file)
+        }
+
+        
+    });
+
+   
+
+
+</script>

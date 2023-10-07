@@ -18,8 +18,13 @@ class MarketPlaceController extends Controller
 
         $categories = Category::all();
         $projects = Project::all();
+        $projectSearch = null;
 
-        return view('marketplace.index', compact('categories', 'projects'));
+        if (request('search')) {
+            $projectSearch = Project::where('name', 'like', '%' . request('search') . '%')->orWhere('description', 'like', '%' . request('search') . '%')->get();
+        }
+
+        return view('marketplace.index', compact('categories', 'projects', 'projectSearch'));
     }
 
     public function details(Project $project)

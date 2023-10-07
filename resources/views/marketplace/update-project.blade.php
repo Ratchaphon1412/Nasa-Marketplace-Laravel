@@ -90,7 +90,7 @@
                      <h3 class="text-xl font-bold text-gray-900 mt-4"  id="preview_section" style="display:none;">Image Poster Preview</h3>
                 </div>
                 
-                     <img id="preview" src="" alt="your image" class="mt-3 mb-3 w-1/2 h-1/2 " style="display:none;"/>
+                     <img id="preview" src="{{url('storage/'.$project->image_poster)}}" alt="your image" class="mt-3 mb-3 w-1/2 h-1/2 " style="display:none;"/>
                  
              </div>
      
