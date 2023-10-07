@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MarketPlaceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -25,6 +26,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+
+Route::controller(MarketPlaceController::class)->group(function () {
+    Route::get('/marketplace', 'index')->name('marketplace');
+    Route::get('/marketplace/detail', 'details')->name('marketplace.details');
+    Route::get('/marketplace/create', 'create')->name('marketplace.create');
 });
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);

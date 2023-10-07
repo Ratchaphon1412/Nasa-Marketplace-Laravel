@@ -1,8 +1,11 @@
 <x-guest-layout>
-    
-   <div class="flex flex-row w-full bg-black">
-        <canvas id="webgl" class="w-full bg-gray-900" ></canvas>
-    <div class="w-full">
+
+    <div class="flex flex-row w-full bg-black">
+     
+            <canvas id="webgl" class="w-full bg-gray-900" ></canvas>
+
+
+       <div class="w-full bg-gray-900">
         <x-authentication-card>
             <x-slot name="logo">
                 <x-authentication-card-logo />
@@ -18,11 +21,10 @@
                     <span>Login with Google</span>                
                 </a>            
             </div>
-    
             <x-validation-errors class="mb-4" />
     
             @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
+                <div class="mb-4 font-medium text-sm text-green-400">
                     {{ session('status') }}
                 </div>
             @endif
@@ -60,8 +62,7 @@
                 </div>
             </form>
         </x-authentication-card>
+
+       </div>
     </div>
-   </div>
-
-
 </x-guest-layout>
