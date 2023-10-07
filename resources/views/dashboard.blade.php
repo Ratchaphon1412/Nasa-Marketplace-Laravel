@@ -25,10 +25,10 @@
                 
                   </div>
             </div>
-     @foreach ($projects as $project )
-        <x-card-opensource />
-  
-     @endforeach
+        @foreach ($projects as $project )
+            <x-card-opensource />
+      
+        @endforeach
         </div>
     
    </x-container>
