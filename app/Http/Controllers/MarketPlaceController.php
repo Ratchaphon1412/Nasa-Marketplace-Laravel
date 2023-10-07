@@ -7,6 +7,7 @@ use App\Models\Category;
 
 use App\Models\Project;
 
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -66,6 +67,7 @@ class MarketPlaceController extends Controller
 
             ]
         );
+
         return redirect()->route('dashboard');
     }
 
@@ -130,5 +132,27 @@ class MarketPlaceController extends Controller
     {
         $projects = Project::where('owner_id', Auth::user()->id)->get();
         return view('dashboard', compact('projects'));
+    }
+
+    public function interest(Project $project)
+    {
+        if ($project->usersInterested()->where('user_id', Auth::user()->id)->count() == 0) {
+            $project->usersInterested()->attach(Auth::user()->id);
+        } else {
+
+            $project->usersInterested()->detach(Auth::user()->id);
+        }
+
+        $project = Project::find($project->id);
+
+        return redirect()->route('marketplace.details', $project);
+    }
+
+    public function meInterest(Request $request)
+    {
+        $projects = Auth::user()->projectsInterested()->get();
+
+
+        return view('interest-user', compact('projects'));
     }
 }

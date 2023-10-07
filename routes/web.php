@@ -42,6 +42,8 @@ Route::controller(MarketPlaceController::class)->group(function () {
         Route::get('/dashboard', 'projectOwner')->name('dashboard');
         Route::post('/marketplace/store/{project}', 'update')->name('marketplace.update');
         Route::post('/marketplace/delete/{project}', 'delete')->name('marketplace.delete');
+        Route::get('/marketplace/interest/{project}', 'interest')->name('marketplace.interest');
+        Route::get('/me/interest', 'meInterest')->name('me.interest');
     });
 });
 

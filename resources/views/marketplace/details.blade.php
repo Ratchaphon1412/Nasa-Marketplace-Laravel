@@ -25,11 +25,25 @@
 
                             </p>
                         </div>
-                      
-                        <button id="joinButton"  class="py-2.5 px-5 mr-2 mb-2  text-sm font-medium  focus:outline-none text-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                            Join
 
-                        </button>
+                        @if ($project->usersInterested()->where('user_id',auth()->user()->id)->count()>0)
+                        <form action="{{route('marketplace.interest',['project'=>$project])}}">
+
+                            <button id="joinButton" type="submit"  class="py-2.5 px-5 mr-2 mb-2  text-sm font-medium  focus:outline-none text-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                Interested
+    
+                            </button>
+                        </form>
+                        @else
+                        <form action="{{route('marketplace.interest',['project'=>$project])}}">
+
+                            <button id="joinButton" type="submit"  class="py-2.5 px-5 mr-2 mb-2  text-sm font-medium  focus:outline-none text-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                Interest
+    
+                            </button>
+                        </form>
+                        @endif
+
                         
 
                     </div>
@@ -44,36 +58,43 @@
         <li class="mr-2" role="presentation">
             <button class="inline-block p-4 border-b-2 rounded-t-lg hover:border-gray-300 hover:text-gray-300" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Details</button>
         </li>
+     
+        @if($project->owner->id == auth()->user()->id)
         <li class="mr-2" role="presentation">
             <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Manage</button>
         </li>
+        @endif
+
+        @if($project->owner->id == auth()->user()->id)
         <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Team</button>
+            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Interest</button>
         </li>
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  hover:border-gray-300 hover:text-gray-300" id="approve-tab" data-tabs-target="#approve" type="button" role="tab" aria-controls="approve" aria-selected="false">Approve</button>
-        </li>
+        @endif
 
 
     </ul>
 </div>
 <div id="myTabContent">
+    
     <div class="hidden p-4 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="flex flex-col   items-center mx-auto w-full">
            <div class="flex  flex-col space-y-8">
             {!! \Illuminate\Support\Str::markdown($project->content) !!}
            </div>
         </div>
-    </div>
+    </div> 
+
+    @if($project->owner->id == auth()->user()->id)
     <div class="hidden p-4 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
         @include('marketplace.update-project')
     </div>
+  @endif
+
+    @if($project->owner->id == auth()->user()->id)
     <div class="hidden p-4 rounded-lg " id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        @include('marketplace.team-project')
+      @include('marketplace.approve-team')
     </div>
-    <div class="hidden p-4 rounded-lg " id="approve" role="tabpanel" aria-labelledby="approve-tab">
-        @include('marketplace.approve-team')
-    </div>
+    @endif
     
 </div>
 

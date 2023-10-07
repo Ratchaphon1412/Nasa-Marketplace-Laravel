@@ -131,6 +131,10 @@
                             <x-dropdown-link href="{{ route('dashboard') }}">
                                 {{ __('Dashboard') }}
                             </x-dropdown-link>
+                            <x-dropdown-link href="{{ route('me.interest') }}">
+                                {{ __('InterestProject') }}
+                            </x-dropdown-link>
+
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
