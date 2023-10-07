@@ -21,10 +21,10 @@ class MarketPlaceController extends Controller
         return view('marketplace.index', compact('categories'));
     }
 
-    public function details(Request $request)
+    public function details(Project $project)
     {
 
-        return view('marketplace.details');
+        return view('marketplace.details', compact('project'));
     }
     public function create(Request $request)
     {
@@ -61,5 +61,11 @@ class MarketPlaceController extends Controller
             ]
         );
         return redirect()->route('dashboard');
+    }
+
+    public function projectOwner()
+    {
+        $projects = Project::where('owner_id', Auth::user()->id)->get();
+        return view('dashboard', compact('projects'));
     }
 }

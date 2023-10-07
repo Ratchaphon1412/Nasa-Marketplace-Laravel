@@ -23,9 +23,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 });
 
 
@@ -39,6 +39,7 @@ Route::controller(MarketPlaceController::class)->group(function () {
     ])->group(function () {
         Route::get('/marketplace/create', 'create')->name('marketplace.create');
         Route::post('/marketplace/store', 'store')->name('marketplace.store');
+        Route::get('/dashboard', 'projectOwner')->name('dashboard');
     });
 });
 
