@@ -12,10 +12,10 @@
 
         @foreach ($categories as $category )
         <div class="space-y-2">
-			<h2 class="text-sm font-semibold tracki uppercase text-gray-400">{{$category->name}}</h2>
+			<a href="/marketplace" class="text-sm font-semibold tracki uppercase text-gray-400">{{$category->name}}</a>
 			<div class="flex flex-col space-y-1">
 				@foreach ($category->subCategories as $subCategory )
-                <a rel="noopener noreferrer" href="#">{{$subCategory->name}}</a>
+                <a rel="noopener noreferrer" href="{{route('marketplace',['subCategory'=>$subCategory->id,'category'=>$category->id])}}"  >{{$subCategory->name}}</a>
                     
                 @endforeach
 				

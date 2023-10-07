@@ -25,6 +25,13 @@ class MarketPlaceController extends Controller
             $projectSearch = Project::where('name', 'like', '%' . request('search') . '%')->orWhere('description', 'like', '%' . request('search') . '%')->get();
         }
 
+        if (request('subCategory')) {
+            $projects = Project::where('sub_category_id', request('subCategory'))->get();
+        }
+
+
+
+
         return view('marketplace.index', compact('categories', 'projects', 'projectSearch'));
     }
 
