@@ -7,7 +7,7 @@
     },
     "routes": [
         {
-            "build": "public/build/(.*)",
+            "build": "/public/build/(.*)",
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
