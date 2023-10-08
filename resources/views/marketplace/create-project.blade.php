@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     @vite(['resources/js/editor-markdown.js'])
 
 
@@ -117,7 +117,7 @@
     
 
 
-</x-guest-layout>
+</x-app-layout>
 
 <script>
         

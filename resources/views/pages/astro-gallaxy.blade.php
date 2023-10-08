@@ -1,5 +1,5 @@
 <section class="w-full h-screen overflow-y-hidden bg-cover bg-fixed bg-bottom bg-no-repeat shadow-lg"
-style="background-image:url('http://localhost/assets/images/space-background-final.svg');"
+style="background-image:url({{asset('assets/images/space-background-final.svg')}});"
 >
 
 

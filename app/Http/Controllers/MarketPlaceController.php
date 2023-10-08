@@ -10,6 +10,8 @@ use App\Models\Post;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Notifications\PostNotification;
+
 
 class MarketPlaceController extends Controller
 {
@@ -179,6 +181,13 @@ class MarketPlaceController extends Controller
             'user_id' => Auth::user()->id,
         ]);
         $project = Project::find($project->id);
+
+
+        $users = $project->usersInterested()->get();
+
+        foreach ($users as $user) {
+            $user->notify(new PostNotification($project));
+        }
 
         return redirect()->route('marketplace.details', $project);
     }
