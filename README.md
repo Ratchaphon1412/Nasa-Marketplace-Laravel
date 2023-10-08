@@ -1,66 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![](https://sa-2019.s3.amazonaws.com/media/images/OpenGraph_Image-2.original.png)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Challenge
 
-## About Laravel
+### A Marketplace for Open Science Projects
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+There are many different open science and open-source projects and tools, but no efficient way to match project creators with interested collaborators who possess the skills required to contribute. Your challenge is to create a solution that will help people who are looking for open-source projects to work on and project creators who need skilled contributors to find each other and communicate.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# HIGH-LEVEL SUMMARY
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+I am developed a web application that connects open science project creators with skilled potential contributors. This addresses the challenge of finding skilled collaborators for open science projects, which often require a wide range of skills and expertise. The app allows project creators to search for collaborators based on skills and interests, and it suggests project creator-collaborator pairings based on information entered by each party. The app also provides a way for individuals and project creators to communicate privately. This app is important because it helps to accelerate the progress of open science by making it easier for people from all backgrounds to contribute to open science projects. This can lead to new discoveries and innovations.
 
-## Learning Laravel
+## Demo
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+www.nasa.ratchaphon1412.co
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## PROJECT DETAILS
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Nasa Marketplace
 
-## Laravel Sponsors
+This project is a platform that aggregates open source projects from various sources, including NASA and other creators. The platform has the following features:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   Search: Allows users to search for projects by name, type, or creator.
+-   Create project: Allows project owners to create their own projects and invite others to join.
+-   Notifications: Sends email notifications to users about project updates.
+-   Posting system: Allows project team members to post updates.
+-   Authentication: Supports Google and email login, as well as two-factor authentication for security.
 
-### Premium Partners
+### Objective
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+The objectives of this project are to:
 
-## Contributing
+-   Make it easier for users to find and access open source projects.
+-   Help open source project creators promote their projects and find contributors.
+-   Promote open source development by making it more accessible and visible.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Benefits
 
-## Code of Conduct
+This project provides the following benefits:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Makes it easier for users to find and access open source projects.
+-   Helps open source project creators promote their projects and find contributors.
+-   Promotes open source development by making it more accessible and visible
 
-## Security Vulnerabilities
+### Development
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+This project was developed in two days, from October 7-8, 2023. The development of this project used the following technologies:
 
-## License
+-   Full Stack Laravel Framwork
+-   Database: MySQL
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The project is developed using Laravel Full Stack Framework and uses SMTP to send emails. More details can be found in the GitHub link.

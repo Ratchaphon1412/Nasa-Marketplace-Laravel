@@ -11,7 +11,7 @@
     <div class="w-full  flex  justify-center items-center mt-24">
         <h1 clsss="text-white  text-5xl font-bold">Start your Project </h1>
     </div>
-    <div class="  flex flex-row justify-center  ">
+    <div class="  flex flex-col justify-center  ">
 
         <form id="createPostForm" action="{{route('marketplace.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col" >
            @csrf
