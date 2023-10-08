@@ -1,5 +1,5 @@
 <x-app-layout>
-    @vite(['resources/js/editor-markdown.js'])
+    
 
 
     <div class="h-96 p-12 bg-fixed  flex justify-center items-center bg-cover bg-no-repeat"

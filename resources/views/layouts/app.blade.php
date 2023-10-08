@@ -13,8 +13,8 @@
 
         {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> --}}
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+        @vite(['resources/css/app.css', 'resources/js/app.js','resources/js/editor-markdown.js'])
+        
         <!-- Styles -->
         @livewireStyles
     </head>
