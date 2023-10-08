@@ -32,7 +32,7 @@ class LoginController extends Controller
     {
         try {
             //create a user using socialite driver google
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('google')->stateless()->user();
             // if the user exits, use that user and login
             $finduser = User::where('google_id', $user->id)->first();
             if ($finduser) {
