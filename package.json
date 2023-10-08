@@ -18,6 +18,7 @@
     "dependencies": {
         "@toast-ui/editor": "^3.2.2",
         "flowbite": "^1.8.1",
+        "laravel-vapor": "^0.6.0",
         "three": "^0.157.0"
     }
 }

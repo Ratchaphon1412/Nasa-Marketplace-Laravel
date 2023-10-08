@@ -1,7 +1,7 @@
 <!-- component -->
 <!-- Creacte By Joker Banny -->
 <div class="h-full p-12 bg-fixed  flex justify-center items-center bg-cover bg-no-repeat"
-style="background-image:url('http://localhost/assets/images/space-background-final.svg');"
+style="background-image:url({{asset('assets/images/space-background-final.svg')}});"
 >
 	<div class="container mx-auto bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-lg mt-16 p-14">
 		<form>
