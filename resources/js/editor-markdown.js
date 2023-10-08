@@ -20,8 +20,3 @@ document.querySelector('#createPostForm').addEventListener('submit', e => {
   e.target.submit();
 });
 
-document.querySelector('#updateProject').addEventListener('submit', e => {
-  e.preventDefault();
-  document.querySelector('#contentupdate').value = editor.getMarkdown();
-  e.target.submit();
-});
