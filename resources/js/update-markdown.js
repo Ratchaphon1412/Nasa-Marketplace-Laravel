@@ -1,12 +1,11 @@
 import Editor from '@toast-ui/editor'
-
 import  '@toast-ui/editor/dist/toastui-editor.css';
 
-const element = document.querySelector('#editorUpdate');
+const elementupdate = document.querySelector('#editorUpdate');
 
 
-const editor = new Editor({
-  el: element,
+const editorupdate = new Editor({
+  el: elementupdate,
   height:'600px',
   initialEditType: 'markdown',
   placeholder: 'Write something cool!',
@@ -18,6 +17,6 @@ const editor = new Editor({
 
 document.querySelector('#updateProject').addEventListener('submit', e => {
   e.preventDefault();
-  document.querySelector('#contentupdate').value = editor.getMarkdown();
+  document.querySelector('#contentupdate').value = editorupdate.getMarkdown();
   e.target.submit();
 });

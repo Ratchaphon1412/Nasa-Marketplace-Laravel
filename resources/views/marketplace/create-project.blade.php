@@ -1,5 +1,5 @@
 <x-app-layout>
-    
+    @vite(['resources/js/editor-markdown.js'])
 
 
     <div class="h-96 p-12 bg-fixed  flex justify-center items-center bg-cover bg-no-repeat"
@@ -96,14 +96,14 @@
     
             <div class="mx-auto w-full  mb-6">
                 <div class="flex flex-col space-y-2 w-full">
-                    <label for="editor" class="font-semibold">Content</label>
+                    <label for="editor" class="font-semibold text-white">Content</label>
                     @error('content')
                         <div class="text-red-600">
                             {{ $message }}
                         </div>
                     @enderror
                     <input type="hidden" name="content" id="content">
-                    <div id="editor" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-black bg-white"></div>
+                    <div id="editor" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-black bg-white "></div>
                        
                 </div>
             
