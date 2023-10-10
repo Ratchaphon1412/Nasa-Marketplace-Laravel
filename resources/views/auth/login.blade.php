@@ -1,11 +1,11 @@
 <x-guest-layout>
 
-    <div class="flex flex-row w-full bg-black">
+    <div class="flex flex-col md:flex-row w-full bg-black">
      
-            <canvas id="webgl" class="w-full bg-gray-900" ></canvas>
+            <canvas id="webgl" class="w-full bg-gray-900 hidden md:block" ></canvas>
 
 
-       <div class="w-full bg-gray-900">
+       <div class="w-full bg-gray-900 mt-16 md:mt-0">
         <x-authentication-card>
             <x-slot name="logo">
                 <x-authentication-card-logo />
