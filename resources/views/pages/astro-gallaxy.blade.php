@@ -10,7 +10,7 @@ style="background-image:url({{asset('assets/images/space-background-final.svg')}
         </p>
     
         <div class="transform hover:scale-110">
-            <a class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full   py-3 px-4 rounded-lg hover:from-pink-500 hover:to-yellow-500 transition-transform transform hover:scale-110" href="#0">Marketplace</a>
+            <a class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full   py-3 px-4 rounded-lg hover:from-pink-500 hover:to-yellow-500 transition-transform transform hover:scale-110" href="/marketplace">Marketplace</a>
           </div>
 
     </div>

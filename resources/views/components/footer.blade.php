@@ -4,30 +4,13 @@
             <x-application-mark/>
        
         </a>
-        <p class="my-6 text-gray-400">Open-source library of over 400+ web components and interactive elements built for better web.</p>
+        <p class="my-6 text-gray-400">This project is a platform that aggregates open source projects from various sources, including NASA and other creators.</p>
         <ul class="flex flex-wrap justify-center items-center mb-6 text-white">
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                <a href="https://github.com/Ratchaphon1412" class="mr-4 hover:underline md:mr-6 ">Ratchaphon1412 Github</a>
             </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Premium</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Campaigns</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Blog</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Affiliate Program</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">FAQs</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Contact</a>
-            </li>
+            
         </ul>
-        <span class="text-sm sm:text-center text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+        <span class="text-sm sm:text-center text-gray-400">©  All Rights Reserved.</span>
     </div>
   </footer>
