@@ -9,9 +9,9 @@
     </div>
     
     <div class="w-full  flex  justify-center items-center mt-24">
-        <h1 clsss="text-white  text-5xl font-bold">Start your Project </h1>
+        <p class="text-white font-bold text-3xl">Start Your Project</p>
     </div>
-    <div class="  flex flex-col justify-center  ">
+    <div class="  flex flex-col justify-center items-center mx-auto p-4 container ">
 
         <form id="createPostForm" action="{{route('marketplace.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col" >
            @csrf
