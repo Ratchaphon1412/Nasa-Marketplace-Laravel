@@ -10,7 +10,7 @@
     </div>
 
    <x-container>
-    <div class="m-8">
+    <div class="p-8 bg-black">
         <div class="w-full flex flex-row justify-between">
           <h1 class="text-3xl font-bold text-white">My Project</h1>
 
